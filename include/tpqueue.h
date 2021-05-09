@@ -6,11 +6,11 @@
 struct SYM {
  public:
 SYM* pNext;
-char data;
+char ch;
 int prior;
 
-SYM(char data, int prior, SYM* pNext = nullptr) {
-this->data = data;
+SYM(char ch, int prior, SYM* pNext = nullptr) {
+this->ch = ch;
 this->prior = prior;
 this->pNext = pNext;
 }
@@ -74,14 +74,14 @@ template<typename T>
 void TPQueue<T>::push(SYM item) {
 if (head == nullptr) {
 //push front
-head = new SYM(item.data, item.prior, head);
+head = new SYM(item.ch, item.prior, head);
 Size++;
 } else {
 SYM* current = this->head;
 //Если входящий элемент имеет высокий приоритет
 if (current->prior < item.prior) {
 //push front
-head = new SYM(item.data, item.prior, head);
+head = new SYM(item.ch, item.prior, head);
 Size++;
 return;
 }
@@ -93,7 +93,7 @@ current = current->pNext;
 break;
 }
 }
-SYM* newNode = new SYM(item.data, item.prior, current->pNext);
+SYM* newNode = new SYM(item.ch, item.prior, current->pNext);
 current->pNext = newNode;
 Size++;
 }
