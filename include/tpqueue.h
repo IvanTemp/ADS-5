@@ -43,7 +43,7 @@ TPQueue<T>::~TPQueue() {
 }
 
 template<typename T>
-char TPQueue<T>::pop() {
+SYM TPQueue<T>::pop() {
 SYM *temp = head;
 head = head->pNext;
 Size--;
