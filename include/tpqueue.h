@@ -26,7 +26,7 @@ SYM pop();
 void push_back(SYM item);
 void push_front(SYM item);
 void push(SYM item);
-int GetSize() { return Size; };
+int GetSize() { return Size; }
  private:
 int Size;
 SYM *head;
