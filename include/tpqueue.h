@@ -4,7 +4,7 @@
 #include <cassert>
 
 struct SYM {
-public:
+ public:
 SYM* pNext;
 char data;
 int prior;
@@ -18,7 +18,7 @@ this->pNext = pNext;
 
 template<typename T>
 class TPQueue {
-public:
+ public:
 TPQueue();
 ~TPQueue();
 
@@ -27,7 +27,7 @@ void push_back(SYM item);
 void push_front(SYM item);
 void push(SYM item);
 int GetSize() { return Size; };
-private:
+ private:
 int Size;
 SYM *head;
 };
