@@ -22,7 +22,7 @@ class TPQueue {
 TPQueue();
 ~TPQueue();
 
-char pop_front();
+SYM pop();
 void push_back(SYM item);
 void push_front(SYM item);
 void push(SYM item);
@@ -43,13 +43,11 @@ TPQueue<T>::~TPQueue() {
 }
 
 template<typename T>
-char TPQueue<T>::pop_front() {
+char TPQueue<T>::pop() {
 SYM *temp = head;
 head = head->pNext;
-char data = temp->data;
-delete temp;
 Size--;
-return data;
+return temp;
 }
 
 template<typename T>
